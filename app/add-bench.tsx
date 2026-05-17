@@ -23,7 +23,14 @@ export default function AddBenchScreen() {
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
       style={styles.wrapper}
     >
-      <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
+      <ScrollView
+      style={{ flex: 1 }}
+      contentContainerStyle={styles.container}
+      keyboardShouldPersistTaps="handled"
+      nestedScrollEnabled
+      showsVerticalScrollIndicator
+      contentInsetAdjustmentBehavior="automatic"
+    >
         <ThemedText type="title">Add a bench</ThemedText>
         <ThemedText style={styles.paragraph}>
           {`Enter the bench name, location, and notes here. Later you can replace location input with an API lookup for coordinates or what3words.`}
@@ -87,6 +94,7 @@ export default function AddBenchScreen() {
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
+    backgroundColor: '#07482A',
   },
   container: {
     flexGrow: 1,
@@ -105,7 +113,7 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(255,255,255,0.35)',
     padding: 14,
     color: '#ffffff',
-    backgroundColor: 'rgba(255,255,255,0.08)',
+    backgroundColor: '#07482A',
   },
   notes: {
     minHeight: 100,
@@ -120,7 +128,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'rgba(255,255,255,0.35)',
     padding: 20,
-    backgroundColor: 'rgba(255,255,255,0.08)',
+    backgroundColor: '#0CA76B',
     gap: 8,
   },
   link: {
